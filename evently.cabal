@@ -1,0 +1,39 @@
+Name:                evently
+Version:             0.1
+Synopsis:            Project Synopsis Here
+Description:         Project Description Here
+License:             AllRightsReserved
+Author:              Author
+Maintainer:          maintainer@example.com
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Executable evently
+  hs-source-dirs: src
+  main-is: Main.hs
+
+  Build-depends:
+    base                      >= 4     && < 5,
+    bytestring                >= 0.9.1 && < 0.11,
+    MonadCatchIO-transformers >= 0.2.1 && < 0.4,
+    mtl                       >= 2     && < 3,
+    snap,
+    snap-core                 >= 0.9   && < 0.11,
+    snap-server               >= 0.9   && < 0.11,
+    snap-extras               == 0.7,
+    unordered-containers,
+    aeson,
+    postgresql-simple,
+    snaplet-postgresql-simple >= 0.5,
+    lens,
+    text,
+    time == 1.4.*,
+    uuid == 1.3.3
+
+  if impl(ghc >= 6.12.0)
+    ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
+                 -fno-warn-unused-do-bind
+  else
+    ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
